@@ -17,7 +17,7 @@ def convert(src_path):
         dst_file = os.path.join(src_path, "".join([file, ext]))
         try:
             with Image.open(src_file) as img:
-                img.convert("RGB")
+                img = img.convert("RGB")
                 img.resize(size)
                 img.save(dst_file, format="JPEG")
             print(">>> Converted {}.".format(src_file))

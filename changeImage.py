@@ -4,7 +4,7 @@ from PIL import Image
 import os
 
 # info
-src = "~/supplier-data/images"
+src = "./supplier-data/images"
 dst = src[:]
 size = (600, 400)
 ext = ".JPEG"

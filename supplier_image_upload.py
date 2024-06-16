@@ -11,6 +11,8 @@ url = "http://34.75.49.83/upload/"
 
 def upload(src_path, url):
     for infile in os.listdir(src_path):
+        if not infile.endswith(".jpeg"):
+            continue
         src_file = os.path.join(src_path, infile)
         try:
             with open(src_file, 'rb') as opened:

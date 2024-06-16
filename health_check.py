@@ -45,8 +45,8 @@ def main():
     if check_hostname():
         issues.append("Error - localhost cannot be resolved to 127.0.0.1")
     for Subject in issues:
-        emails.generate_email(From, To, Subject, Body)
-        emails.send_email()
+        message = emails.generate_email(From, To, Subject, Body)
+        emails.send_email(message)
 
 
 if __name__ == "__main__":

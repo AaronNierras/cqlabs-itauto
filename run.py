@@ -2,7 +2,6 @@
 
 import os
 import requests
-import json
 
 
 # info
@@ -17,7 +16,7 @@ def get_desc(src_path):
         try:
             with open(src_file) as f:
                 lines = f.readlines()
-                desc = "name: {},weight: {}".format(lines[0].strip(), int(lines[1].strip()))
+                desc = "name: {},weight: {}".format(lines[0].strip(), lines[1].strip())
                 paragraph.append(desc)
         except FileNotFoundError:
             print(">>> File '{}' not found.".format(src_file))
@@ -35,11 +34,10 @@ def upload_desc(src_path, url):
                     "name": lines[0].strip(),
                     "weight": int(lines[1].strip().split(" ")[0]),
                     "description": ''.join(lines[2:]).strip(),
-                    "image_name": os.path.join("./supplier-data/images", "".join([file, ".JPEG"]))
+                    "image_name": "".join([file, ".jpeg"])
                 }
-                desc = json.dumps(desc)
-                #r = requests.post(url, json=desc)
-            #print(">>> File '{}' uploaded. (response:{})".format(src_file, r.status_code))
+                r = requests.post(url, json=desc)
+            print(">>> File '{}' uploaded. (response:{})".format(src_file, r.status_code))
         except FileNotFoundError:
             print(">>> File '{}' not found.".format(src_file))
 

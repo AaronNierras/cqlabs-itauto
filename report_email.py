@@ -12,7 +12,7 @@ import emails
 src = "./supplier-data/descriptions/"
 attachment = "/tmp/processed.pdf"
 current_time = datetime.datetime.now().strftime("%B %d, %Y")
-title = "Processed on {}".format(current_time)
+title = "Processed Update on {}".format(current_time)
 paragraph = get_desc(src)
 
 if __name__ == "__main__":
@@ -23,5 +23,5 @@ if __name__ == "__main__":
     To = "student@example.com"
     Subject = "Upload Completed - Online Fruit Store"
     Body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
-    emails.generate_email(From, To, Subject, Body, attachment)
-    emails.send_email()
+    message = emails.generate_email(From, To, Subject, Body, attachment)
+    emails.send_email(message)

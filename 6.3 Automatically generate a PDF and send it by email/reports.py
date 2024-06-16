@@ -9,7 +9,7 @@ from reportlab.graphics.charts.piecharts import Pie
 
 
 def generate(filename, title, additional_info, table_data: list):
-    """Geneate a PDF."""
+    """Generate a PDF."""
     # Style
     styles = getSampleStyleSheet()
     # File

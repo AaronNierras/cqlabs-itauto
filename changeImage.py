@@ -14,7 +14,7 @@ def convert(src_path):
     for infile in os.listdir(src_path):
         file, _ = os.path.splitext(infile)
         src_file = os.path.join(src_path, infile)
-        dst_file = os.path.join(src_path, "".join(file, ext))
+        dst_file = os.path.join(src_path, "".join([file, ext]))
         try:
             with Image.open(src_file) as img:
                 img.convert("RGB")

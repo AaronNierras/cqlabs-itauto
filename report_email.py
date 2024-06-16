@@ -9,7 +9,7 @@ import emails
 
 
 # info
-src = "~/supplier-data/descriptions/"
+src = "./supplier-data/descriptions/"
 attachment = "/tmp/processed.pdf"
 current_time = datetime.datetime.now().strftime("%B %d, %Y")
 title = "Processed on {}".format(current_time)

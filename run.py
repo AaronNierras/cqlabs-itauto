@@ -6,8 +6,8 @@ import json
 
 
 # info
-src = "~/supplier-data/descriptions/"
-url = "http://localhost/fruits/"
+src = "./supplier-data/descriptions/"
+url = "http://34.75.49.83/fruits/"
 
 
 def get_desc(src_path):
@@ -21,7 +21,7 @@ def get_desc(src_path):
                 paragraph.append(desc)
         except FileNotFoundError:
             print(">>> File '{}' not found.".format(src_file))
-            
+
     return paragraph
 
 def upload_desc(src_path, url):
@@ -35,7 +35,7 @@ def upload_desc(src_path, url):
                     "name": lines[0].strip(),
                     "weight": int(lines[1].strip().split(" ")[0]),
                     "description": ''.join(lines[2:]).strip(),
-                    "image_name": os.path.join("~/supplier-data/images", "".join(file, ".JPEG"))
+                    "image_name": os.path.join("./supplier-data/images", "".join([file, ".JPEG"]))
                 }
                 desc = json.dumps(desc)
                 #r = requests.post(url, json=desc)

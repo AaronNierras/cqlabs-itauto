@@ -5,8 +5,8 @@ import requests
 
 
 # info
-src = "~/supplier-data/images"
-url = "http://localhost/upload/"
+src = "./supplier-data/images"
+url = "http://34.75.49.83/upload/"
 
 
 def upload(src_path, url):
